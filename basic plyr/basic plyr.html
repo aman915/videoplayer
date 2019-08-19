@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Default Plyr</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+
+</head>
+<body>
+
+
+    <div style="width: 900px; height: 600px;">
+        <video poster="./../media/photo-1511447333015-45b65e60f6d5.jpg" id="player" playsinline controls >
+            <source src="./../media/View From A Blue Moon - Official Trailer (4K Ultra HD) - John Florence.mp4" type="video/mp4" />
+        
+            <!-- Captions are optional -->
+            <track kind="captions" label="English" 
+            src="../media/View from a Bl.vtt" srclang="en" default />
+        </video>
+    </div>
+
+
+<script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+
+<script>
+    const player = new Plyr('#player');
+</script>
+
+</body>
+</html>

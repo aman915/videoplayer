@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <button id="buttonEnglish" onclick="loadTranscript('en');">Display English transcript</button>
+    <div class="video-player">
+        <div class="video-container">
+            <video poster="./media/photo-1511447333015-45b65e60f6d5.jpg" id="myPlayer" controls playsinline preload="metadata" crossOrigin="anonymous"> 
+                <source src="http://mainline.i3s.unice.fr/mooc/elephants-dream-medium.mp4" type="video/mp4" />
+                <track kind="captions" label="English captions" src="./media/ab.vtt" srclang="en" default />
+                <track label="English subtitles" kind="subtitles" srclang="en" src="http://mainline.i3s.unice.fr/mooc/elephants-dream-subtitles-en.vtt" >
+                <track label="English chapters" kind="chapters" srclang="en" src="http://mainline.i3s.unice.fr/mooc/elephants-dream-chapters-en.vtt">
+            </video>
+
+            <div class="controls">
+                <button class="btnsonbar" id="play_pause">
+                    <i id="play_pause_glyph" class="glyphicon glyphicon-play play"></i>
+                </button>
+            </div>
+            
+            <div class="actual-controls">
+                <div class="progress-section">
+                    <div class="time" id="time-id">
+                    </div>
+
+                    <div class="progress_bar">
+                        <div class="actual-progress">
+                            <div class="circle">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time1" id="time-id1">
+                    </div>
+                </div>
+                <div class="tools">
+                    <button class="btnsonbar" id="btnback"><i class="glyphicon glyphicon-repeat mirror"></i></button>
+                    <button class="btnsonbar" id="play_pause1">
+                        <i id="play_pause_glyph1" class="glyphicon glyphicon-play-circle second-play"></i>
+                    </button>
+                    <button class="btnsonbar" id="btnfwd"><i class="glyphicon glyphicon-repeat"></i></button>
+                </div>
+            </div> 
+
+        </div>
+        <div id="transcript"></div>
+    </div> 
+    
+    <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+    <script src="https://cdn.plyr.io/3.5.6/plyr.polyfilled.js"></script>
+    <script src="script/script.js"></script>
+    <script>
+        jwplayer("myPlayer").setup({
+            "file": "http://example.com/myVideo.mp4",
+            "image": "http://example.com/myImage.png",
+            "height": 360,
+            "width": 640
+        });
+    </script>
+</body>
+</html>
